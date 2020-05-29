@@ -1,3 +1,10 @@
+# Dependencies
+[discord.js](https://www.npmjs.com/package/discord.js)
+
+[enum](https://www.npmjs.com/package/enum)
+
+[lodash](https://www.npmjs.com/package/lodash)
+
 # Example use
 
 __example.demb__

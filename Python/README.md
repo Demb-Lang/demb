@@ -1,3 +1,9 @@
+# Dependencies
+
+[discord.py](https://pypi.org/project/discord.py/)
+
+[ReflectionHelper](https://pypi.org/project/ReflectionHelper/)
+
 # Example use
 
 __example.demb__
