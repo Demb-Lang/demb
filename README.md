@@ -113,7 +113,7 @@ These variables can have default values separated by `=`
 *Example*:
 `|variable=default`
 
-If there's no default value, nor an assigned value the value will be the name of the variable.
+If there's no default value, nor an assigned value the value will be the name of the variable, unless the attribute is `color` or `inline` in which case `color` will be `0x000000` and `inline` will be `false`.
 
 ### Raw
 

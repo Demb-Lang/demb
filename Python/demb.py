@@ -101,6 +101,11 @@ class Parser:
 			Attribute.Author: ["name", "comment" "url", "icon_url", "end"]
 		}
 		
+		variableOverride = {
+			"color": 0x000000,
+			"inline": False
+		}
+		
 		lIndex = 0
 		def raiser(s: str):raise dembParseException(f"Line {lIndex}: {s}")
 		with open(path if path.endswith(".demb") else f"{path}.demb", 'r') as f:
@@ -157,7 +162,7 @@ class Parser:
 						templine = default[0]
 						default = '='.join(default[1:])
 					else:default = None
-					line = kwargs[templine] if templine in kwargs else default if default!=None else templine
+					line = kwargs[templine] if templine in kwargs else default if default!=None else variableOverride[currentAttrName] if currentAttrName in variableOverride else templine
 				if currentInner==None:
 					Embed.GetMethod(f"set_{currentAttrName}").Invoke(currentEmb, [line])
 				else:

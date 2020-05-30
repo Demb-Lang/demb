@@ -104,6 +104,10 @@ class Parser{
 			"thumbnail":"Thumbnail",
 			"footer":"Footer"
 		}
+		let variableOverrides = {
+			"Color": 0x000000,
+			"inline": "false"
+		}
 		let lIndex = 0
 		if(!path.endsWith(".demb")) path=[path,".demb"].join('')
 		let raiser = s => {throw new dembParseException(`Line ${lIndex}: ${s}`)}
@@ -170,7 +174,7 @@ class Parser{
 						else{
 							d=undefined
 						}
-						line = templine in vars ? vars[templine] : d!=undefined ? d : templine
+						line = templine in vars ? vars[templine] : d!=undefined ? d : currentAttrName in variableOverrides ? variableOverrides[currentAttrName] : templine
 					}
 					if(currentInner==undefined)
 					{
