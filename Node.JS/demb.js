@@ -27,7 +27,7 @@ class Embed {
 		this.Author = undefined
 	}
 	set_Color(color){
-		let c = parseInt(color, 16)
+		let c = Number.isInteger(color) ? color : parseInt(color, 16)
 		if(isNaN(c)) throw new dembParseException(`Invalid color: ${color}`)
 		this.Color = c
 	}
