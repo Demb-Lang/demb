@@ -24,6 +24,7 @@ class Embed:
 	def set_color(self, color):
 		try:color = int(color, 16)
 		except ValueError: raise dembParseException(f"Invalid color in base 16: {color}")
+		except TypeError:pass
 		self.color = color
 	def set_footer(self, f):
 		self.footer = f
